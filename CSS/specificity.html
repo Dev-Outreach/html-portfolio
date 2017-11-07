@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <h1>Specificity</h1>
+        <div>
+            <ul>
+                <li>This example demonstrates on how specificity determines which rules are applied. The more specific the seletor the higher precedence it has.</li>
+                
+                <li>There are 4 types of specificity. (order by most specific to least)
+                    <ol>
+                        <li>The Style attribute (inline-style)</li>
+                        <li>The ID attribute</li>
+                        <li>The Class attribute</li>
+                        <li>The element itself (ie: div, li, span, ...)</li>
+                    </ol>
+                </li>
+                <li>Notes:
+                    <ol>
+                        <li>The Style attribute has infinitely more specific value then any thing else. Meaning if an element has a style attribute set, those rules will overwrite all other rules it might have (from ids,classes and tags combined)</li>
+                        <li>The ID attribute has infinitely more specific value then classes and element tags. Meaning no amount of classes and/or element tags can outweight ID </li>
+                        <li>The Class attribute has infinitely more specific value then element tags. Meaning no amount of element tags can outeight a class </li>
+                        <li>The element tags have the lost specific value</li>
+                    </ol>
+                </li>
+
+                <li>In this example the element selector is set to color green, class to red, id to grey, and inline-style to blue.</li>
+                <li>All the items below have the element selector and any other selectors/attributes will be noted in the brackets</li>
+                <li>Note: ids should be unqiue but in this example the same id will be used to demonstrate specificity</li>
+            </ul>
+            
+            <dl>
+                <dt>Item 1</dt>
+                <dt class="list-item">Item 2 (has: class)</dt>
+                <dt id="list-item">Item 3 (has: id)</dt>
+                <dt style="color:blue">Item 4 (has: inline-style)</dt>
+                <dt id="list-item" class="list-item">Item 5 (has: id and class)</dt>
+                <dt id="list-item" style="color:blue">Item 6 (has: id and inline-style)</dt>
+                <dt class="list-item" style="color:blue">Item 7 (has: class and inline-style)</dt>
+                <dt id="list-item" class="list-item" style="color:blue">Item 8 (has: id, class, and inline-style)</dt>
+            </dl>
+        </div>
+        
+    </body>
+</html>
+<style>
+
+    /*ID Selector*/
+    #list-item{
+        color: grey;
+    }
+    
+    /*class Selector*/
+    .list-item{
+        color: red;
+    }
+
+    /*element Selector*/
+    dt{
+        color:green;
+    }
+    
+</style>
+        

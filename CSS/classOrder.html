@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <h1>Class Order</h1>
+      <div>
+          <ul>
+              <li>This example shows that it doesnt matter what order you put the classes in on the element, but what does matter is the order of the classes in the style/css. 
+                    The later class (closet to the bottom) will overwrite any css rules that it has in common with the classes before (above) it. </li>
+              <li> In this example there are 3 classes in the style element that are written in the following order: blue-overline, red-underline, and blue-line-through.</li>
+              <li>blue-overline and blue-line-through both set the color to blue and have a text-decoration rule but blue-overline is declared before red-underline and blue-line-through is declared after red-underline.</li>
+              <li>As Shown in the the examples 1.1 and 1.2 since blue-overline is before red-underline the css rules that they have in common will be determined by red-underline</li>
+              <li>As Shown in the the examples 2.1 and 2.2 since red-underline is before blue-line-through the css rules that they have in common will be determined by blue-line-through</li>
+          </ul>
+          <h3 class="red-underline blue-overline">Ex 1.1: Class Attr Order: 'red-underline, blue-overline'</h3>
+          <h3 class="blue-overline red-underline">Ex 1.2: Class Attr Order: 'blue-overline, red-underline'</h3>
+          <h3 class="red-underline blue-line-through">Ex 2.1: Class Attr Order: 'red-underline, blue-line-through'</h3>
+          <h3 class="blue-line-through red-underline">Ex 2.2: Class Attr Order: 'blue-line-through, red-underline'</h3>
+      </div>
+     
+    </body>
+    </html>
+<style>
+    .blue-overline {
+        color: blue;
+        text-decoration: overline;
+    }
+
+    .red-underline{
+        color: red;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .blue-line-through{
+        color: blue;
+        text-decoration: line-through;
+        font-weight: unset;
+    }
+
+</style>
+    

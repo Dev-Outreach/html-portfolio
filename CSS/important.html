@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <h1>the 'Important' flag</h1>
+        <div>
+            <ul>
+                <li>The <b>Class Order</b> example showed how that it doesnt matter what order you put the classes in on the element, but what does matter is the order of the classes in the style/css. 
+                    The later class (closet to the bottom) will overwrite any css rules that it has in common with the classes before (above) it. </li>
+                <li>This example will show how you can prevent the later classes from overwriten rules of the classes before it by placing !important after the rule that you dont want to get overwritten</li>
+                <li>In this example there are 4 classes in the style element that are written in the following order: blue-overline-1, blue-overline-2,  red-underline-1, and red-underline-2.</li>
+                <li>blue-overline-1 and blue-overline-2 are similar class both declared before the red-underline classes. The only difference is that blue-overline-2 has an !important flag set on the color rule setting the color to blue.</li>
+                <li>red-underline-1 and red-underline-2 are similar class both declared after the blue-overline classes. The only difference is that red-underline-2 has an !important flag set on the color rule setting the color to red.</li>
+                <li>As shown in example 1 both the color and text-decoration rules from the blue-overline-1 class get overwritten by the red-underline-1 class</li>
+                <li>As shown in example 2 only the text-decoration rule from the blue-overline-2 class gets overwritten by the red-underline-1 class becasue the color rule has the important flag on it</li>
+                <li>As shown in example 3 both the color and text-decoration rules from the blue-overline-2 class get overwritten by the red-underline-2 class becasue red-underline-2 also has an important flag on the color rule and seeing as it is the later class its rules will overwrite any rules it has in common with classes before it, including important ones</li>
+            </ul>
+            <h3 class="red-underline-1 blue-overline-1">Ex 1: Class Attr Order: 'red-underline-1, blue-overline-1'</h3>
+            <h3 class="red-underline-1 blue-overline-2">Ex 2: Class Attr Order: 'red-underline-1, blue-overline-2 '</h3>
+            <h3 class="red-underline-2 blue-overline-2">Ex 3: Class Attr Order: 'red-underline-2, blue-overline-2 '</h3>
+        </div>
+        
+    </body>
+</html>
+<style>
+    .blue-overline-1 {
+        color: blue;
+        text-decoration: overline;
+    }
+
+    .blue-overline-2 {
+        color: blue !important;
+        text-decoration: overline;
+    }
+
+    .red-underline-1{
+        color: red;
+        text-decoration: underline;
+    }
+
+    .red-underline-2{
+        color: red !important;
+        text-decoration: underline;
+    }
+
+
+
+</style>
+        
