@@ -1,7 +1,19 @@
+<!-- Embedded  Before Reference to Style Sheet-->
+<style>
+    .color-1 {
+        color: red;
+    }
+    .color-2 {
+        color: red;
+    }
+    .color-3 {
+        color: red;
+    }
+ </style>
 <html>
     <head>
         <!-- Style Sheet -->
-        <link rel="stylesheet" type="text/css" href="demoStyleSheet.css" > 
+        <link rel="stylesheet" type="text/css" href="demoStyleSheet.css" /> 
         <title></title>
     </head>
     
@@ -9,18 +21,70 @@
         <h1>Style Sheet vs Embedded vs Inline</h1>
         <div>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>In the specificty example we saw that inline styles will ALWAYS overwrite any rule it has in common with other selector (ID, class, or element), that is unless the other seletor has the important flag on the rule</li>
+                <li>In this example there are 3 intances of css styling for the class color-1.
+                    <ol>
+                        <li>In an External style sheet sheet (demoStyleSheet.css) being referenced/added to this page in the head of the html </li>
+                        <li>In a style element before the html element</li>
+                        <li>In a style element after the html element</li>
+                    </ol>
+                    Two intances of css style for the class color-2
+                    <ol>
+                        <li>In an External style sheet sheet (demoStyleSheet.css) being referenced/added to this page in the head of the html </li>
+                        <li>In a style element before the html element</li>
+                    </ol>
+                    Two intances of css style for the class color-3
+                    <ol>
+                        <li>In a style element before the html element</li>
+                        <li>In a style element after the html element</li>
+                    </ol>
+                    Two intances of css style for the class color-4
+                    <ol>
+                        <li>In an External style sheet sheet (demoStyleSheet.css) being referenced/added to this page in the head of the html </li>
+                        <li>In a style element after the html element</li>
+                    </ol>
+                </li>
+                <li>Now for these 3 sources of css styling each source will set the color of the element
+                    <ol>
+                        <li>All the classes in the External .css will set the color to blue </li>
+                        <li>All the classes in the style element before the html element will set the color to red</li>
+                        <li>All the classes in the style element after the html element will set the color to green</li>
+                    </ol>
+                    This is to demonstrate which of instance of the classes (color-1, color-2, color-3, color-4) will be used to determine the color of the element
+                </li>
+                <li>NOTE: the first 4 examples have an inline-style setting the color to black to show again that inline-style overwrites all</li>
+
             </ul>
-            
+            <h4 class="color-1" style="color: black"> Has Class color-1 and an Inline-Style</h4>
+            <h4 class="color-2" style="color: black"> Has Class color-2 and an Inline-Style</h4>
+            <h4 class="color-3" style="color: black"> Has Class color-3 and an Inline-Style</h4>
+            <h4 class="color-4" style="color: black"> Has Class color-4 and an Inline-Style</h4>
+            <h4 class="color-1"> Has Class color-1 </h4>
+            <h4 class="color-2"> Has Class color-2 </h4>
+            <h4 class="color-3"> Has Class color-3 </h4>
+            <h4 class="color-4"> Has Class color-4 </h4>
+
+            <ul>
+                <li>As shown in the above examples it doesnt matter where the classes (selectors) are define (embedded in a style element, or in an external style sheet). Class order still applies</li>
+                <li>Since the instances of the classes color-1, color-2, and color-3 that set the color to red are defined at the top before the other soucres, they will get overwritten.</li>
+                <li>Since the instances of the classes color-1, color-2, and color-4 that set the color to blue are defined in the external style sheet that is referenced/added to the pages inbetween the 2 style elements, its classes will overwrite the ones in the style element above it but get overwritten by the classes in the style element below it.</li>
+                <li>Since the instances of the classes color-1, color-3, and color-4 that set the color to green are defined at the bottom before the other soucres, they will overwrite all the classes above them.</li>
+
+            </ul>
+
         </div>
         
     </body>
 </html>
-<!-- Embedded  -->
+<!-- Embedded After Reference to Style Sheet -->
 <style>
-   
-</style>
+    .color-1 {
+        color: green;
+    }
+    .color-3 {
+        color: green;
+    }
+    .color-4 {
+        color: green;
+    }
+ </style>
